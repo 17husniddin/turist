@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Travel{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+
+
+<body>
+    <div class="header">
+        <div class="menubutton">
+            <a href="/"><img src="https://www.maxway.uz/logo.svg" alt="Logo" class="logo"></a>
+
+            {% for c in categories %}
+            <a class="menu" href="/{{c.pk}}/">{{c.name}}</a>
+            {% endfor %}
+
+            <img src="https://www.maxway.uz/images/Icons/shopping-cart.svg" style="height: 30px;;" alt="">
+
+        </div>
+    </div>
+{% block content %}
+{% endblock %}
+</body>
+
+</html>
